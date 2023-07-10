@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ItemContainer() {
+function ItemContainer(props) {
   return (
-    <div>PropGreeting? No se si iba aca esto jaja</div>
+    <div>{props.greeting}</div>
   )
 }
 

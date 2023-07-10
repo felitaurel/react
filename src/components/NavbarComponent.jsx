@@ -15,9 +15,12 @@ import AdbIcon from '@mui/icons-material/Adb';
 import sneakers from './sneakers.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { SvgIcon } from '@mui/material';
+import CartWidget from './CartWidget';
+
+{/*Navbar sacado de Material ui, edite detalles relevantes y separe el cartwidjet*/}
 
 const pages = ['Urbano', 'Running', 'Accesorios'];
-const settings = ['Ver Items'];
+
 
 function NavbarComponent() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,7 +45,7 @@ function NavbarComponent() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={sneakers} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <img src={sneakers} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> {/*Edite la imagen y texto*/}
           <Typography
             variant="h6"
             noWrap
@@ -127,36 +130,8 @@ function NavbarComponent() {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Carrito">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <ShoppingCartIcon></ShoppingCartIcon>3
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          <CartWidget />
+          
         </Toolbar>
       </Container>
     </AppBar>

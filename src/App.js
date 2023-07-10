@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import * as materialize from "materialize-css"
 import './App.css';
 import NavbarComponent from './components/NavbarComponent';
 import ItemContainer from './components/ItemContainer';
@@ -10,7 +9,7 @@ function App() {
       <header className="App-header">
         
       
-      <ItemContainer />
+      <ItemContainer greeting="Hola"/>
       </header>
     </div>
   );

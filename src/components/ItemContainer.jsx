@@ -8,7 +8,7 @@ function ItemContainer(props) {
       <Typography
         sx={{
           bgcolor: 'primary.main',
-          
+          p:1,
         }}>
         {props.greeting}
       </Typography>  

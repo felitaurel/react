@@ -1,8 +1,18 @@
+
+import Typography from '@mui/material/Typography';
 import React from 'react'
 
 function ItemContainer(props) {
   return (
-    <div>{props.greeting}</div>
+    <div>
+      <Typography
+        sx={{
+          bgcolor: 'primary.main',
+          
+        }}>
+        {props.greeting}
+      </Typography>  
+    </div>
   )
 }
 

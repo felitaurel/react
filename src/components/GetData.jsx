@@ -1,6 +1,7 @@
 import React from 'react'
 import jordan1 from "../JordanRetro1.jpg"
 import jordan4 from "../JordanRetro4.jpg"
+import jordan11 from "../JordanRetro11.jpg"
 const Productos = []
 
 function GetData() {
@@ -53,7 +54,7 @@ function GetData() {
               "id": "3",
               "nombre": "Jordan Retro 11",
               "descripcion": "Las zapatillas Jordan Retro 11 combinan estilo y rendimiento. Con su parte superior de cuero premium y su amortiguación de primera calidad, son perfectas tanto para el día a día como para actividades deportivas.",
-              "img": "https://ejemplo.com/zapatillas/jordan11.jpg",
+              "img": jordan11,
               "precio": 199.99
             }
           ]

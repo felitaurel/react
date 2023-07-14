@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 
 function ActionAreaCard(props) {
   const {nombre, descripcion, img, precio} = props;
-  
+  console.log('item')
   return (
     
     <Card sx={{ maxWidth: 345 }}>
@@ -15,16 +15,15 @@ function ActionAreaCard(props) {
         <CardMedia
           component="img"
           height="140"
-          image= {img}
-          alt="Jordan retro 1"
+          src= {img}
+          alt={nombre}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            LIZARD
+            
             {nombre} 
-            {img}
-            OBJETO
-            COSA
+            
+            
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {descripcion}

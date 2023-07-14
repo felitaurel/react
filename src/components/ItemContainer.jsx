@@ -12,6 +12,7 @@ function ItemContainer() {
 
   async function requestProducts() {
     const respuesta = await GetData();
+    
     setProducts(respuesta);
     
   }
@@ -24,14 +25,18 @@ function ItemContainer() {
 {/*console.log(products)*/}
   console.log("uno")
   return (
+
     <div>
+      
       {console.log("dos")}
       Listado de Productos
       <div>
         {products.map((item) => { 
-          ActionAreaCard({...item})
-          console.log(item.nombre)
+          console.log(item.id)
+          return(
+          <ActionAreaCard Key={item.id} {...item}></ActionAreaCard>
           
+          )
         })}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-
+import jordan1 from "../JordanRetro1.jpg"
+import jordan4 from "../JordanRetro4.jpg"
 const Productos = []
 
 function GetData() {
@@ -38,14 +39,14 @@ function GetData() {
               "id": "1",
               "nombre": "Jordan Retro 1",
               "descripcion": "Las zapatillas Jordan Retro 1 son un clásico del estilo urbano. Presentan un diseño icónico con colores llamativos y ofrecen comodidad durante todo el día.",
-              "img": "JordanRetro1.jpg",
+              "img": jordan1,
               "precio": 150.99
             },
             {
               "id": "2",
               "nombre": "Jordan Retro 4",
               "descripcion": "Las zapatillas Jordan Retro 4 son ideales para los amantes del estilo urbano. Con su diseño moderno y elegante, estas zapatillas destacan en cualquier ocasión.",
-              "img": "https://ejemplo.com/zapatillas/jordan4.jpg",
+              "img": jordan4,
               "precio": 179.99
             },
             {

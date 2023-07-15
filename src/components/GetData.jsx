@@ -56,6 +56,34 @@ function GetData() {
               "descripcion": "Las zapatillas Jordan Retro 11 combinan estilo y rendimiento. Con su parte superior de cuero premium y su amortiguación de primera calidad, son perfectas tanto para el día a día como para actividades deportivas.",
               "img": jordan11,
               "precio": 199.99
+            },
+            {
+              "id": "4",
+              "nombre": "Nike Air Force 1",
+              "descripcion": "Las Nike Air Force 1 son unas icónicas zapatillas urbanas con un estilo clásico y versátil. Cuentan con una parte superior de cuero y una suela de caucho resistente.",
+              "precio": 120.00,
+              "imagen": "https://ejemplo.com/imagenes/air-force-1.jpg"
+            },
+            {
+              "id": "5",
+              "nombre": "Adidas Superstar",
+              "descripcion": "Las Adidas Superstar son unas zapatillas urbanas con un diseño atemporal y reconocible. Presentan una puntera de goma y las famosas tres rayas de Adidas en los costados.",
+              "precio": 90.00,
+              "imagen": "https://ejemplo.com/imagenes/superstar.jpg"
+            },
+            {
+              "id": "6",
+              "nombre": "Vans Old Skool",
+              "descripcion": "Las Vans Old Skool son unas zapatillas clásicas de skate que se han convertido en un ícono urbano. Tienen una parte superior de lona resistente y la distintiva banda lateral de Vans.",
+              "precio": 75.00,
+              "imagen": "https://ejemplo.com/imagenes/old-skool.jpg"
+            },
+            {
+              "id": "7",
+              "nombre": "Puma Suede Classic",
+              "descripcion": "Las Puma Suede Classic son unas zapatillas de estilo retro con una parte superior de ante suave y una suela de goma que brinda comodidad y tracción.",
+              "precio": 80.00,
+              "imagen": "https://ejemplo.com/imagenes/suede-classic.jpg"
             }
           ]
           if (Urbanas.length === 0){

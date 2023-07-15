@@ -5,15 +5,17 @@ import ItemContainer from './components/ItemContainer';
 import CartWidget from './components/CartWidget';
 function App() {
   return (
-    <div className="App">
-    <NavbarComponent />
-    
-      <header className="App-header">
-        
+    <BrowserRouter> {/*aca hay que hacer routes <Route=path"/" element= {<component bla bla />} */}
+      <div className="App">
+      <NavbarComponent />
       
-      <ItemContainer greeting="Hola"/>
-      </header>
-    </div>
+        <header className="App-header">
+          
+        
+        <ItemContainer greeting="Hola"/>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 

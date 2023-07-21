@@ -16,6 +16,7 @@ import sneakers from './sneakers.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { SvgIcon } from '@mui/material';
 import CartWidget from './CartWidget';
+import Link from "react-router-dom"
 
 {/*Navbar sacado de Material ui, edite detalles relevantes y separe el cartwidjet*/}
 
@@ -49,7 +50,7 @@ function NavbarComponent() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component="a" /*deberia cambiar "a" a "Link", y "href" a "to", es un metodo de react router dom, despues checkear si funciona */
             href="/"
             sx={{
               mr: 2,

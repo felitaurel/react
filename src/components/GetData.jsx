@@ -3,7 +3,7 @@ import jordan1 from "../JordanRetro1.jpg"
 import jordan4 from "../JordanRetro4.jpg"
 import jordan11 from "../JordanRetro11.jpg"
 const Productos = []
-
+{/*agregar categorias a todas y mostrarlas juntas, no hace falta separar definitivamente en deportivas o urbanas, basta con ponerle un atributo mas para despues buscar segun cat*/ }
 function GetData() {
    
   

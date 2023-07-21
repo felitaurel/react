@@ -11,7 +11,8 @@ function ActionAreaCard(props) {
   return (
     
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea>    {/*Chequear docs, cambiar la accion on click a Link = './product/${id} para que genere dinamico un componente especifico a cada item
+                            Capaz sacar la descripcion y precio y solo mostrarlo en onclick?*/ }
         <CardMedia
           component="img"
           height="140"

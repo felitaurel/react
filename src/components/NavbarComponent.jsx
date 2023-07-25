@@ -16,11 +16,11 @@ import sneakers from './sneakers.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { SvgIcon } from '@mui/material';
 import CartWidget from './CartWidget';
-import Link from "react-router-dom"
+import { Link } from "react-router-dom"
 
 {/*Navbar sacado de Material ui, edite detalles relevantes y separe el cartwidjet*/}
 
-const pages = ['Urbano', 'Running', 'Accesorios'];
+const pages = ['urbano', 'running', 'accesorios'];
 
 
 function NavbarComponent() {
@@ -46,12 +46,13 @@ function NavbarComponent() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Link to="/">
           <img src={sneakers} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> {/*Edite la imagen y texto*/}
           <Typography
             variant="h6"
             noWrap
-            component="a" /*deberia cambiar "a" a "Link", y "href" a "to", es un metodo de react router dom, despues checkear si funciona */
-            href="/"
+            component= "p" /*deberia cambiar "a" a "Link", y "href" a "to", es un metodo de react router dom, despues checkear si funciona */
+            
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -64,7 +65,7 @@ function NavbarComponent() {
           >
             Sneakers
           </Typography>
-
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -122,14 +123,16 @@ function NavbarComponent() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
+              <Link //Deberia cambiar este Button a <Link component = {RouterLink} to ='/'> y en el to ver como se aplicaria? ej to='category/running'
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ mx: 2, px: 2, color: 'white', display: 'block' }}
+                to={`category/${page}`}
               >
                 {page}
-              </Button>
-            ))}
+                
+              </Link>
+            ))} 
           </Box>
           <CartWidget />
           

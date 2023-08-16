@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 function ActionAreaCard(props) {
   const {id, nombre, descripcion, img, precio, category} = props;
   console.log('item')
-  return (<Card sx={{ maxWidth: 345 }}>
-    <CardActionArea component={Link} to={`/product/${id}`}>      
+  return (<Card sx={{ maxWidth: 345, display: 'flex', flexDirection: 'column', flexGrow: 1, alignItems: 'stretch'}}>
+    <CardActionArea component={Link} to={`/product/${id}`} sx={{display: 'flex', flexDirection: 'column', flexGrow: 1, alignItems: 'stretch'}}>      
       <CardMedia
                           component="img"
                           height="140"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { getProductData } from "./GetData.jsx";
+import { getProductData } from "./firebase.js";
 import { useParams } from "react-router-dom";
 //Tiene que tener la misma logica que item list, mostrar el objeto pero no importa de donde vengan las props
 function ItemDetail(props) {

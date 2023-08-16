@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { getProductData } from "./GetData.jsx";
+import { getProductData } from "./firebase.js";
 import { useParams } from "react-router-dom";
 import ItemDetail from './ItemDetail'
 //Tiene que tener la misma logica q item listcontainer, conseguir los datos del producto y no mostarlo
@@ -25,16 +25,16 @@ function ItemDetailContainer() {
   // return <ItemDetail product={product} />;
   return (
     <div>
-  <div>
-    <img width={600} src={product.img} alt="imagen"></img>
-    </div>
     <div>
-      <h2>{product.nombre}</h2>
-    </div>
-    <div>
-      <h4>$ {product.precio}</h4>
-      <small>{product.descripcion}</small>
-    </div>
+      <img width={300} src={product.img} alt="imagen"></img>
+      </div>
+      <div>
+        <h2>{product.nombre}</h2>
+      </div>
+      <div>
+        <h4>$ {product.precio}</h4>
+        <small style = {{color: 'white'}}>{product.descripcion}</small>
+      </div>
     </div>
   );
 }

@@ -19,10 +19,10 @@ function ItemList(props) {
     
     
      
-    <Grid container justifyItems="center">
+    <Grid container justifyItems="center" spacing={4} sx={{m: 2}}>
        {props.products.map((item) => (
         
-        <Grid item xs={4}>
+        <Grid item s={12} md={4}>
           <ActionAreaCard Key={item.id} {...item}></ActionAreaCard>
           </Grid>
       )

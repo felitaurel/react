@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { cartContext } from "./Context";
+import { cartContext } from "./cartContext";
 import { createOrder } from "./firebase";
 import { useContext, useState } from "react";
 

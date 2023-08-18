@@ -93,7 +93,8 @@ async function _exportProductsWithBatch(){
         "descripcion": "Las zapatillas Adidas Ultraboost 21 ofrecen un retorno de energía sin igual. Con su tecnología Boost y su diseño elegante, te brindarán una sensación de ligereza y comodidad en tus entrenamientos.",
         "img": ultraboost,
         "precio": 159.99,
-        "category": "running"
+        "category": "running",
+        "stock": 5
       },
       {
         "id": 3,
@@ -101,14 +102,16 @@ async function _exportProductsWithBatch(){
         "descripcion": "Las zapatillas New Balance Fresh Foam 1080v11 están diseñadas para ofrecerte una carrera suave y cómoda. Su entresuela Fresh Foam proporciona una amortiguación excepcional y una sensación de respuesta en cada zancada.",
         "img": freshfoam,
         "precio": 139.99,
-        "category": "running"
+        "category": "running",
+        "stock": 5
       },{
         "id": 4,
         "nombre": "Jordan Retro 1",
         "descripcion": "Las zapatillas Jordan Retro 1 son un clásico del estilo urbano. Presentan un diseño icónico con colores llamativos y ofrecen comodidad durante todo el día.",
         "img": jordan1,
         "precio": 150.99,
-        "category": "urbano"
+        "category": "urbano",
+        "stock": 5
       },
       {
         "id": 5,
@@ -116,7 +119,8 @@ async function _exportProductsWithBatch(){
         "descripcion": "Las zapatillas Jordan Retro 4 son ideales para los amantes del estilo urbano. Con su diseño moderno y elegante, estas zapatillas destacan en cualquier ocasión.",
         "img": jordan4,
         "precio": 179.99,
-        "category": "urbano"
+        "category": "urbano",
+        "stock": 5
       },
       {
         "id": 6,
@@ -124,7 +128,8 @@ async function _exportProductsWithBatch(){
         "descripcion": "Las zapatillas Jordan Retro 11 combinan estilo y rendimiento. Con su parte superior de cuero premium y su amortiguación de primera calidad, son perfectas tanto para el día a día como para actividades deportivas.",
         "img": jordan11,
         "precio": 199.99,
-        "category": "urbano"
+        "category": "urbano",
+        "stock": 5
       }]; // aca poner todos los datos que ya habia en getdata
 
     const batch = writeBatch(db); 
@@ -137,7 +142,7 @@ async function _exportProductsWithBatch(){
   })
 
   const data = await batch.commit()  
-  console.log("Listo!", data)
+  
 }
 
 export { getData, getOrder, getProductData, getCategoryData, createOrder, _exportProductsWithBatch};

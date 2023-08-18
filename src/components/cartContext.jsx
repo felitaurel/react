@@ -8,18 +8,22 @@ const cartContext = createContext({ cart: [] });
 function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
-  const prueba = "otra prueba";
+  
 
   function addToCart(product, count) {
     const newCart = [...cart];
+    
     if (isInCart(product.id)) {
       const indexUpdate = cart.findIndex((item) => item.id === product.id);
       newCart[indexUpdate].count += count;
       setCart(newCart);
+      console.log(cart, newCart)
     } else {
       const newItemInCart = { ...product, count };
       newCart.push(newItemInCart);
       setCart(newCart);
+      console.log("else")
+      console.log(cart, newCart)
       //setCart( [...cart, { ...product, count}]) -> otra forma de hacerlo
     }
   }
@@ -52,7 +56,7 @@ function CartContextProvider(props) {
   function getTotalPriceInCart() {
     let total = 0;
     cart.forEach((item) => {
-      total += item.count * item.price;
+      total += item.count * item.precio;
     });
     return total;
   }
@@ -62,7 +66,6 @@ function CartContextProvider(props) {
       value={{
         getItemInCart,
         cart,
-        prueba,
         addToCart,
         removeItem,
         clearCart,

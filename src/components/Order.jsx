@@ -9,7 +9,6 @@ function OrderConfirm() {
 
   useEffect(() => {
     getOrder(id).then((order) => {
-      console.log(order);
       setOrderData(order);
     });
   }, []);
@@ -23,9 +22,9 @@ function OrderConfirm() {
             Tus productos comprados:
             {orderData.items.map((item) => {
               return (
-                <small>
-                  {item.title} - {item.count} unidades
-                </small>
+                <div>
+                  {item.nombre} - {item.count} unidades, orden de compra: {orderData.id}
+                </div>
               );
             })}
           </p>

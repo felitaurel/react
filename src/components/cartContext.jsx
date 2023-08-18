@@ -2,8 +2,7 @@ import { useState, createContext } from "react";
 
 const cartContext = createContext({ cart: [] });
 
-// Custom provider
-// CartContextProvider (custom componente) !== cartContext.Provider (componente default)
+
 
 function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
@@ -24,7 +23,6 @@ function CartContextProvider(props) {
       setCart(newCart);
       console.log("else")
       console.log(cart, newCart)
-      //setCart( [...cart, { ...product, count}]) -> otra forma de hacerlo
     }
   }
 
@@ -42,7 +40,6 @@ function CartContextProvider(props) {
 
   function clearCart() {
     return null;
-    // vaciar el carrito
   }
 
   function getTotalItemsInCart() {

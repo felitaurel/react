@@ -34,7 +34,6 @@ function Checkout() {
   function onInputChange(evt) {
     const value = evt.target.value;
     const field = evt.target.name;
-    //buyer["firstname"] -> buyer.firstname
     const newState = { ...buyer };
     newState[field] = value;
     setBuyer(newState);

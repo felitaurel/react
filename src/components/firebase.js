@@ -32,7 +32,6 @@ const appFirebase = initializeApp(firebaseConfig);
 
 const db = getFirestore(appFirebase);
 
-// 2 Implementar async function getData()
 
 async function getData() {
   const productsRef = collection(db, "products");
@@ -47,7 +46,6 @@ async function getData() {
   return docsData;
 }
 
-//  3.Implementar getProductData
 async function getProductData(id) {
   const docRef = doc(db, "products", id);
   const docSnapshot = await getDoc(docRef);
@@ -59,7 +57,6 @@ async function getProductData(id) {
   }
 }
 
-// * 4 Implementar getCategoryData
 async function getCategoryData(categoryId) {
   const productsRef = collection(db, "products");
   // cambiamos esto

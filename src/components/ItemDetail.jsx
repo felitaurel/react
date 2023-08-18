@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { cartContext } from './cartContext.jsx';
 import ItemCount from './ItemCount.jsx';
 import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 //Tiene que tener la misma logica que item list, mostrar el objeto pero no importa de donde vengan las props
 function ItemDetail(props) {
   
@@ -23,17 +24,19 @@ function ItemDetail(props) {
     setIsAddedToCart(true);
   }
   return(
-    <div>
-    <div>
+    <Grid container sx={{my: 5}}>
+
+    <Grid item md={4}>
     <img width={300} src={img} alt="imagen"></img>
-    </div>
-    <div>
+    </Grid>
+    
+    <Grid item md={8} sx={{"background-color": "#2381d9", "height": "60vh"}}>
       <h2>{nombre}</h2>
-    </div>
-    <div>
+    
+    
       <h4>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
-      </div>
+      
     {stock > 0 ? (
       isAddedToCart ? (
         <Link to="/cart">Ir al carrito</Link>
@@ -46,8 +49,8 @@ function ItemDetail(props) {
     {itemInCart && (
       <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
     )}
-    
-  </div>
+    </Grid>
+    </Grid>
   )
 }
 

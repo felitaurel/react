@@ -15,14 +15,13 @@ import { CartContextProvider } from './components/cartContext';
 function App() {
   
   return (
-    <div className="App">
+    <div className="App" style={{'height': '100vh'}}>
       <CartContextProvider>
         <BrowserRouter> 
         
         <NavbarComponent />
         {/*<button onClick={_exportProductsWithBatch}>Exportar a firebase</button>*/}
         <Routes>
-        console.log(cart)
               <Route path="/" element={<ItemListContainer />} />
               <Route path="/category/:categoryId" element={<ItemListContainer />} />
               <Route path="/product/:id" element={<ItemDetailContainer />} />

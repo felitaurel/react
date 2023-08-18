@@ -45,13 +45,14 @@ function CartWidget() {
   };*/
   const context = useContext(cartContext)
   let total = context.getTotalItemsInCart()
+  
   return (
     <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Carrito">
               
                 <IconButton component={Link} to={"/cart"}/*onClick={handleOpenUserMenu}*/ sx={{ p: 0 }}>
                   <ShoppingCartIcon/> {/*Un icono de material UI q encontre*/}
-                  <span> {total} </span>
+                  {total >0 && <span> {total} </span>}
                 </IconButton>
               
             </Tooltip>

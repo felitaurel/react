@@ -15,7 +15,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import sneakers from './sneakers.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { SvgIcon } from '@mui/material';
-
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { cartContext } from './cartContext';
 {/*Tuve que separar este componente del navbar, ya que desde material venian unidos, y editar algunos detalles*/}
 
 const settings = ['Ver Items'];
@@ -24,7 +26,7 @@ const settings = ['Ver Items'];
   
 
 function CartWidget() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  /*const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -40,15 +42,20 @@ function CartWidget() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-  };
+  };*/
+  const context = useContext(cartContext)
+  let total = context.getTotalItemsInCart()
   return (
     <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Carrito">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <ShoppingCartIcon></ShoppingCartIcon>3 {/*Un icono de material UI q encontre*/}
-              </IconButton>
+              
+                <IconButton component={Link} to={"/cart"}/*onClick={handleOpenUserMenu}*/ sx={{ p: 0 }}>
+                  <ShoppingCartIcon/> {/*Un icono de material UI q encontre*/}
+                  <span> {total} </span>
+                </IconButton>
+              
             </Tooltip>
-            <Menu
+            {/*<Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -69,7 +76,7 @@ function CartWidget() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu>*/}
           </Box>
   )
 }

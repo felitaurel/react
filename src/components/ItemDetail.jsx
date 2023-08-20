@@ -37,17 +37,18 @@ function ItemDetail(props) {
       <h4>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
       
+    
+    {itemInCart && (
+      <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
+    )}
     {stock > 0 ? (
       isAddedToCart ? (
-        <Link to="/cart">Ir al carrito</Link> //cambiarle el color al link porque no se ve sobre el celeste
+        <Link to="/cart" style={{color: '#000000'}}>Ir al carrito</Link> //cambiarle el color al link porque no se ve sobre el celeste
       ) : (
         <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
       )
     ) : (
       <p>No hay stock disponible</p>
-    )}
-    {itemInCart && (
-      <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
     )}
     </Grid>
     </Grid>

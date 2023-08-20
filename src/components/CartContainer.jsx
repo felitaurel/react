@@ -18,6 +18,7 @@ function CartContainer() {
         <div key={item.id}>
           {console.log(item.id)}
           <h2>{item.nombre}</h2>
+          <p style={{ display: 'none' }}>{total = total + item.precio * item.count}</p>
           <p>Precio unitario: ${item.precio}</p>
           <p>Cantidad a comprar: {item.count}</p>
           <p>Precio total ${item.count * item.precio}</p>

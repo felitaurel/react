@@ -25,19 +25,19 @@ function ItemCount(props) {
             alignItems: "center",
             justifyContent: "center",
           }}
-          className="item-count-container"
+          
         >
           <button
             disabled={props.stock === 0}
-            className="item-count-button"
+            
             onClick={handleClickSub}
           >
             -
           </button>
-          <h2 className="count-text">{clickCount}</h2>
+          <h2 >{clickCount}</h2>
           <button
             disabled={props.stock === 0}
-            className="item-count-button"
+          
             onClick={handleClickAdd}
           >
             +
@@ -47,7 +47,7 @@ function ItemCount(props) {
         <button
           disabled={props.stock === 0}
           onClick={() => props.onConfirm(clickCount)}
-          className="item-count-button add-to-cart-button"
+          
         >
           <h4>Añadir al carrito</h4>
         </button>

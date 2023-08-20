@@ -39,7 +39,7 @@ function ItemDetail(props) {
       
     {stock > 0 ? (
       isAddedToCart ? (
-        <Link to="/cart">Ir al carrito</Link>
+        <Link to="/cart">Ir al carrito</Link> //cambiarle el color al link porque no se ve sobre el celeste
       ) : (
         <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
       )

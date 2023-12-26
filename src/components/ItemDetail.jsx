@@ -26,15 +26,15 @@ function ItemDetail(props) {
   return(
     <Grid container sx={{my: 5}}>
 
-    <Grid item md={4}>
-    <img width={300} src={img} alt="imagen"></img>
+    <Grid item md={6}>
+    <img width= "100%" height="auto" src={img} alt="imagen" style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}}></img>
     </Grid>
+    <Grid item md={1}></Grid>
+    <Grid item md={5} sx={{"background-color": "#2381d9", "height": "60vh"}}>
+      <h2 style={{ color: "white" }}>{nombre}</h2>
     
-    <Grid item md={8} sx={{"background-color": "#2381d9", "height": "60vh"}}>
-      <h2>{nombre}</h2>
     
-    
-      <h4>$ {precio}</h4>
+      <h4 style={{ color: "white" }}>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
       
     

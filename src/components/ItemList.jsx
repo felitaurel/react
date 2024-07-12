@@ -22,7 +22,7 @@ function ItemList(props) {
     <Grid container justifyItems="center" spacing={4} sx={{m: 2}}>
        {props.products.map((item) => (
         
-        <Grid item s={12} md={4}>
+        <Grid item s={12} md={4}><p>'coso'</p>
           <ActionAreaCard Key={item.id} {...item}></ActionAreaCard>
           </Grid>
       )

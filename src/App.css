@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   background-color: #111855;
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {

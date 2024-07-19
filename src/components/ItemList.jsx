@@ -21,7 +21,9 @@ function ItemList(props) {
     
      
     <Grid container justifyItems="center" spacing={4} sx={{m: 2}}>
-      <HeroBanner item md={12} />
+      <Grid item xs={12}>
+        <HeroBanner />
+      </Grid> 
        {props.products.map((item) => (
         
         <Grid item s={12} md={4}>

@@ -10,6 +10,7 @@ import Checkout from './components/Confirmacion';
 import CartContainer from './components/CartContainer';
 import OrderConfirm from './components/Order';
 import { CartContextProvider } from './components/cartContext';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
             </Routes>
         
 
-          
+          <Footer />
             <header className="App-header">
               
             

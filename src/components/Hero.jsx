@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
-
+import banner from '../cosoEcommerce.png'
 const HeroBanner = () => {
   return (
     <Box
@@ -10,7 +10,7 @@ const HeroBanner = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '400px',
-        backgroundImage: './src/cosoEcommerce.png', 
+        backgroundImage: banner, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white',

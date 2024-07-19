@@ -15,7 +15,7 @@ import { CartContextProvider } from './components/cartContext';
 function App() {
   
   return (
-    <div className="App" style={{'height': '100vh'}}>
+    <div className="App">
       <CartContextProvider>
         <BrowserRouter> 
         

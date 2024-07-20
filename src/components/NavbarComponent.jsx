@@ -43,7 +43,7 @@ function NavbarComponent() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/">

@@ -43,7 +43,7 @@ function NavbarComponent() {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="static" sx={{backgroundColor: '#1a1a1a'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/">
@@ -59,7 +59,7 @@ function NavbarComponent() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
@@ -115,7 +115,7 @@ function NavbarComponent() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
             }}
           >

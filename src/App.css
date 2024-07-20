@@ -27,6 +27,11 @@
   color: white;
 }
 
+.navbar {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -20,7 +20,7 @@ function App() {
       <CartContextProvider>
         <BrowserRouter> 
         
-        <NavbarComponent />
+        <NavbarComponent className='navbar' />
         {/*<button onClick={_exportProductsWithBatch}>Exportar a firebase</button>*/}
         <Routes>
               <Route path="/" element={<ItemListContainer />} />

@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <CartContextProvider>
         <BrowserRouter> 
-        
+        <header className="App-header" />
         <NavbarComponent className='navbar' />
         {/*<button onClick={_exportProductsWithBatch}>Exportar a firebase</button>*/}
         <Routes>
@@ -33,11 +33,8 @@ function App() {
             </Routes>
         
 
-          <Footer />
-            <header className="App-header">
-              
+        <Footer />
             
-            </header>
             
           
         </BrowserRouter>

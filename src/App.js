@@ -22,6 +22,7 @@ function App() {
         <header className="App-header" />
         <NavbarComponent className='navbar' />
         {/*<button onClick={_exportProductsWithBatch}>Exportar a firebase</button>*/}
+        <div className='App-content'>
         <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route path="/category/:categoryId" element={<ItemListContainer />} />
@@ -31,7 +32,7 @@ function App() {
               <Route path="/order-confirmation/:id" element={ <OrderConfirm/>}/>
               <Route path="*" element={<h1>Page not found: 404</h1>} />
             </Routes>
-        
+            </div>
 
         <Footer />
             

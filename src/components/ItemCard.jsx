@@ -24,8 +24,8 @@ function ActionAreaCard(props) {
                             
                             
                           </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {descripcion}
+                          <Typography variant="body2">
+                            
                             {precio}
                             
                           </Typography>

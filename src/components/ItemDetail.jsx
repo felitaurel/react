@@ -69,10 +69,10 @@ import ItemCount from './ItemCount.jsx';
 
 function ItemDetail(props) {
     const { addToCart, getItemInCart } = useContext(cartContext);
-    const { id, nombre, descripcion, img, precio, category, stock, possibleSizes, availableSizes } = props;
+    const { id, nombre, descripcion, img, precio, category, stock } = props;
     const itemInCart = getItemInCart(id);
     const [isAddedToCart, setIsAddedToCart] = useState(false);
-    const [selectedSize, setSelectedSize] = useState(null);
+    //const [selectedSize, setSelectedSize] = useState(null);
     const maxItems = itemInCart ? stock - itemInCart.count : stock;
 
     function handleAddToCart(clickCount) {
@@ -91,7 +91,7 @@ function ItemDetail(props) {
                 <h2 style={{ color: "white" }}>{nombre}</h2>
                 <h4 style={{ color: "white" }}>$ {precio}</h4>
                 <small style={{ color: 'white' }}>{descripcion}</small>
-
+{/*
                 <div>
                     <h3 style={{ color: "white" }}>Seleccionar Talle:</h3>
                     <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -115,7 +115,7 @@ function ItemDetail(props) {
                             );
                         })}
                     </div>
-                </div>
+                </div>*/}
 
                 {itemInCart && (
                     <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>

@@ -20,7 +20,7 @@ function ItemDetail(props) {
   const tallesPosibles = [36,37,38,39,40,41,42,43,44]
 
   function handleAddToCart() {
-    addToCart(props);
+    addToCart(props, 1);
     alert(`${nombre} agregado al carrito`);
     setIsAddedToCart(true);
   }

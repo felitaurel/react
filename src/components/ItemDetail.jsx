@@ -29,7 +29,7 @@ function ItemDetail(props) {
   return(
     <Grid container sx={{my: 5}}>
 
-    <Grid item md={6}>
+    <Grid item>
     <img width= "100%" height="auto" src={img} alt="imagen" style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}}></img>
     </Grid>
     <Grid item md={1}></Grid>

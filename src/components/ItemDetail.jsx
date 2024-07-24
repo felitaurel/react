@@ -46,7 +46,7 @@ function ItemDetail(props) {
       isAddedToCart ? (
         <Link to="/cart" style={{color: '#000000'}}>Ir al carrito</Link> //cambiarle el color al link porque no se ve sobre el celeste
       ) : (
-        <Button onClick = {handleAddToCart}> Agregar al carrito </Button>
+        <button onClick = {handleAddToCart}> Agregar al carrito </button>
       )
     ) : (
       <p>No hay stock disponible</p>

@@ -40,6 +40,32 @@ function ItemDetail(props) {
       <h4 style={{ color: "white" }}>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
       
+      <div>
+      <h3>Seleccionar Talle</h3>
+      <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '200px' }}>
+        {tallesPosibles.map((size) => (
+          <button
+            key={size.size}/*
+            onClick={() => handleSizeClick(size)}
+            disabled={!size.available}*/
+            style={{
+              width: '50px',
+              height: '50px',
+              margin: '5px',/*
+              backgroundColor: size.size === selectedSize ? 'blue' : 'white',
+              color: size.available ? 'black' : 'gray',
+              border: size.available ? '1px solid black' : '1px solid gray',
+              textDecoration: size.available ? 'none' : 'line-through',*/
+              backgroundColor: 'blue',
+              color: 'black',
+              border: '1px solid black'
+            }}
+          >
+            {size.size}
+          </button>
+        ))}
+      </div>
+        </div>
     <div>
     {itemInCart && (
       <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>

@@ -46,7 +46,6 @@ function ItemDetail(props) {
             {tallesPosibles.map((size) => (
               <button
                 key={size}
-                onClick={() => handleAddToCart(size)}
                 style={{
                   width: '50px',
                   height: '50px',

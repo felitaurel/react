@@ -42,7 +42,7 @@ function ItemDetail(props) {
         
         <div>
           <h3 style={{ color: 'white' }}>Seleccionar Talle</h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '200px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '200px' , justifyContent: 'center'}}>
             {tallesPosibles.map((size) => (
               <button
                 key={size}

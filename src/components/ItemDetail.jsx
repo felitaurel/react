@@ -29,8 +29,8 @@ function ItemDetail(props) {
   return(
     <Grid container sx={{my: 5}}>
 
-    <Grid item>
-    <img width= "100%" height="auto" src={img} alt="imagen" style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}}></img>
+    <Grid item md={6}>
+    <img width= "70%" height="auto" src={img} alt="imagen" style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}}></img>
     </Grid>
     <Grid item md={1}></Grid>
     <Grid item md={5} sx={{"background-color": "#2381d9", "height": "60vh"}}>
@@ -40,8 +40,7 @@ function ItemDetail(props) {
       <h4 style={{ color: "white" }}>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
       
-    </Grid>
-    <Grid item md={8}>
+    <div>
     {itemInCart && (
       <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
     )}
@@ -53,7 +52,7 @@ function ItemDetail(props) {
       )
     ) : (
       <p>No hay stock disponible</p>
-    )}
+    )}</div>
     </Grid>
     </Grid>
   )

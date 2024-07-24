@@ -25,7 +25,7 @@ function ItemDetail(props) {
 
   return (
     <Grid container sx={{ my: 5 }}>
-      <Grid item md={6}>
+      <Grid item md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img
           width="70%"
           height="auto"
@@ -35,18 +35,18 @@ function ItemDetail(props) {
         />
       </Grid>
       <Grid item md={1}></Grid>
-      <Grid item md={5} sx={{ backgroundColor: '#2381d9', height: '60vh', padding: '20px', borderRadius: '10px' }}>
+      <Grid item md={5} sx={{ backgroundColor: '#2381d9', height: '60vh', padding: '20px', borderRadius: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <h2 style={{ color: 'white' }}>{nombre}</h2>
         <h4 style={{ color: 'white' }}>$ {precio}</h4>
-        <small style={{ color: 'white' }}>{descripcion}</small>
+        <small style={{ color: 'white', marginBottom: '20px' }}>{descripcion}</small>
         
-        <div>
+        <div style={{ textAlign: 'center' }}>
           <h3 style={{ color: 'white' }}>Seleccionar Talle</h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '200px' , justifyContent: 'center'}}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '300px', justifyContent: 'center' }}>
             {tallesPosibles.map((size) => (
               <button
                 key={size}
-                
+                onClick={() => handleAddToCart(size)}
                 style={{
                   width: '50px',
                   height: '50px',
@@ -63,7 +63,8 @@ function ItemDetail(props) {
             ))}
           </div>
         </div>
-        <div style={{ marginTop: '20px' }}>
+        
+        <div style={{ marginTop: '20px', textAlign: 'center' }}>
           {itemInCart && <h2 style={{ color: 'white' }}>Ya agregaste {itemInCart.count} unidades de este producto</h2>}
           {stock > 0 ? (
             isAddedToCart ? (
@@ -79,6 +80,7 @@ function ItemDetail(props) {
     </Grid>
   );
 }
+
 
 export default ItemDetail
 

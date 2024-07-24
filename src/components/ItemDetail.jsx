@@ -13,15 +13,17 @@ function ItemDetail(props) {
   const { addToCart, getItemInCart } = useContext(cartContext);
   const {id, nombre, descripcion, img, precio, category, stock} = props;
   const itemInCart = getItemInCart(id)
-  
+  console.log(id)
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-  
+  const maxItems = itemInCart
+    ? stock - itemInCart.count
+    : stock;
   
   const tallesPosibles = [36,37,38,39,40,41,42,43,44]
 
-  function handleAddToCart() {
-    addToCart(props, 1);
-    alert(`${nombre} agregado al carrito`);
+  function handleAddToCart(clickCount) {
+    addToCart(props, clickCount);
+    alert(`${nombre} agregado al carrito, cantidad: ${clickCount}`);
     setIsAddedToCart(true);
   }
   return(
@@ -40,13 +42,13 @@ function ItemDetail(props) {
       
     
     {itemInCart && (
-      <h2>Ya agregaste {itemInCart} al carrito</h2>
+      <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
     )}
     {stock > 0 ? (
       isAddedToCart ? (
         <Link to="/cart" style={{color: '#000000'}}>Ir al carrito</Link> //cambiarle el color al link porque no se ve sobre el celeste
       ) : (
-        <button onClick = {handleAddToCart}> Agregar al carrito </button>
+        <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
       )
     ) : (
       <p>No hay stock disponible</p>

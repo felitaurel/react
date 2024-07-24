@@ -45,7 +45,7 @@ function ItemDetail(props) {
       <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '200px' }}>
         {tallesPosibles.map((size) => (
           <button
-            key={size.size}/*
+            key={size}/*
             onClick={() => handleSizeClick(size)}
             disabled={!size.available}*/
             style={{
@@ -61,7 +61,7 @@ function ItemDetail(props) {
               border: '1px solid black'
             }}
           >
-            {size.size}
+            {size}
           </button>
         ))}
       </div>

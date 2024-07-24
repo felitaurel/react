@@ -40,7 +40,8 @@ function ItemDetail(props) {
       <h4 style={{ color: "white" }}>$ {precio}</h4>
       <small style = {{color: 'white'}}>{descripcion}</small>
       
-    
+    </Grid>
+    <Grid item md={8}>
     {itemInCart && (
       <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
     )}

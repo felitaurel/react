@@ -25,7 +25,7 @@ function CartContainer() {
           <Grid item xs={2}>Cantidad a comprar: {item.count}</Grid>
           <Grid item xs={2}>Precio total ${item.count * item.precio}</Grid>
           
-          <button onClick={() => removeItem(item.id)}>Eliminiar</button>
+          <button onClick={() => removeItem(item.id)}>Eliminar</button>
         </Grid>
       ))}
       <Grid container>

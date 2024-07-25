@@ -13,6 +13,7 @@ function ItemCount(props) {
           disabled={props.stock === 0}
           onClick={() => props.onConfirm(clickCount)}
           variant= "contained"
+          sx ={{backgroundColor: '#1a1a1a'}}
         >
           <h4>Añadir al carrito</h4>
         </Button>

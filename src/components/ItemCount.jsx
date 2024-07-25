@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Button  from "@mui/material/Button"
 function ItemCount(props) {
     const [clickCount, setClickCount] = useState(1);
   
@@ -9,13 +9,13 @@ function ItemCount(props) {
     return (
       <div>
   
-        <button
+        <Button
           disabled={props.stock === 0}
           onClick={() => props.onConfirm(clickCount)}
-          
+          variant= "contained"
         >
           <h4>Añadir al carrito</h4>
-        </button>
+        </Button>
       </div>
     );
   }

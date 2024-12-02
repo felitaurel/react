@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { cartContext } from './cartContext.jsx';
 import ItemCount from './ItemCount.jsx';
 import { Link } from 'react-router-dom';
-import { Grid } from '@mui/material';
 import {
   Grid,
   Typography,

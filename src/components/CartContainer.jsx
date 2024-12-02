@@ -1,40 +1,198 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { cartContext } from "./cartContext";
-import { createOrder } from "./firebase";
-import { Link, useNavigate } from "react-router-dom";
-import ItemCount from "./ItemCount";
-import {Grid} from "@mui/material";
+import { Link } from "react-router-dom";
+import {
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+  IconButton,
+  Box,
+  Container,
+  Divider,
+} from "@mui/material";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 function CartContainer() {
   const { cart, removeItem } = useContext(cartContext);
-  console.log(cart)
-  var total = 0;
-  return (
-    <div>
-      
-      <h1>Tus items:</h1>
-      {cart.map((item) => (
-        
-        <Grid container  key={item.id} style={{backgroundColor: '#5b76b5', border: "1px solid #000", height: '10vh', display:'flex', flexWrap: 'wrap', margin: '0', padding: '0'}}>
+  const total = cart.reduce((sum, item) => sum + item.precio * item.count, 0);
 
-          <Grid item xs={2}><img src={item.img} alt={item.nombre} style={{width: '100%', height: '10vh', objectFit: 'cover', display: 'block', maxHeight: '100%'}}/> </Grid>
-          <Grid item xs={3}>{item.nombre}</Grid>
-          <Grid item xs={2} style={{ display: 'none' }}>{total = total + item.precio * item.count}</Grid>
-          <Grid item xs={2}>Precio unitario: ${item.precio}</Grid>
-          <Grid item xs={2}>Cantidad a comprar: {item.count}</Grid>
-          <Grid item xs={2}>Precio total ${item.count * item.precio}</Grid>
-          
-          <button onClick={() => removeItem(item.id)}>Eliminar</button>
-        </Grid>
-      ))}
-      <Grid container>
-        <Grid item xs={12}><div>Total de la compra: {total}</div>
-        <Link to="/checkout">Comprar</Link>
-        </Grid>
-      </Grid>
-    </div>
+  if (cart.length === 0) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 8, textAlign: 'center' }}>
+        <Typography variant="h4" gutterBottom>Tu carrito está vacío</Typography>
+        <Button component={Link} to="/" variant="contained" color="primary" sx={{ mt: 2 }}>
+          Continuar Comprando
+        </Button>
+      </Container>
+    );
+  }
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
+        Tus items
+      </Typography>
+      
+      <Card elevation={3}>
+        <CardContent sx={{ p: 0 }}>
+          {/* Header */}
+          <Grid container sx={{ 
+            backgroundColor: 'primary.main', 
+            color: 'primary.contrastText',
+            p: 2,
+            display: { xs: 'none', md: 'flex' }
+          }}>
+            <Grid item md={3}>
+              <Typography variant="subtitle1">Producto</Typography>
+            </Grid>
+            <Grid item md={3}>
+              <Typography variant="subtitle1">Detalles</Typography>
+            </Grid>
+            <Grid item md={2}>
+              <Typography variant="subtitle1">Precio</Typography>
+            </Grid>
+            <Grid item md={2}>
+              <Typography variant="subtitle1">Cantidad</Typography>
+            </Grid>
+            <Grid item md={2}>
+              <Typography variant="subtitle1">Total</Typography>
+            </Grid>
+          </Grid>
+
+          {/* Cart Items */}
+          {cart.map((item) => (
+            <Box key={item.id}>
+              <Grid container sx={{
+                p: 2,
+                alignItems: 'center',
+                '&:hover': {
+                  backgroundColor: 'action.hover',
+                }
+              }}>
+                {/* Product Image */}
+                <Grid item xs={12} md={3} sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center',
+                  gap: 2
+                }}>
+                  <Box sx={{
+                    width: 100,
+                    height: 100,
+                    overflow: 'hidden',
+                    borderRadius: 1,
+                    flexShrink: 0
+                  }}>
+                    <img
+                      src={item.img}
+                      alt={item.nombre}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </Box>
+                </Grid>
+
+                {/* Product Name */}
+                <Grid item xs={12} md={3}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'medium' }}>
+                    {item.nombre}
+                  </Typography>
+                </Grid>
+
+                {/* Unit Price */}
+                <Grid item xs={6} md={2}>
+                  <Typography variant="body1" sx={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5 
+                  }}>
+                    <Box component="span" sx={{ 
+                      display: { md: 'none' },
+                      color: 'text.secondary',
+                      fontSize: '0.875rem'
+                    }}>
+                      Precio:
+                    </Box>
+                    ${item.precio}
+                  </Typography>
+                </Grid>
+
+                {/* Quantity */}
+                <Grid item xs={6} md={2}>
+                  <Typography variant="body1" sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5
+                  }}>
+                    <Box component="span" sx={{ 
+                      display: { md: 'none' },
+                      color: 'text.secondary',
+                      fontSize: '0.875rem'
+                    }}>
+                      Cantidad:
+                    </Box>
+                    {item.count}
+                  </Typography>
+                </Grid>
+
+                {/* Total Price */}
+                <Grid item xs={6} md={2}>
+                  <Box sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}>
+                    <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
+                      ${item.count * item.precio}
+                    </Typography>
+                    <IconButton 
+                      onClick={() => removeItem(item.id)}
+                      color="error"
+                      size="small"
+                    >
+                      <DeleteOutlineIcon />
+                    </IconButton>
+                  </Box>
+                </Grid>
+              </Grid>
+              <Divider />
+            </Box>
+          ))}
+
+          {/* Cart Total and Checkout */}
+          <Box sx={{ 
+            p: 3,
+            backgroundColor: 'grey.50',
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: { sm: 'center' },
+            justifyContent: 'space-between',
+            gap: 2
+          }}>
+            <Typography variant="h6">
+              Total de la compra: ${total}
+            </Typography>
+            <Button
+              component={Link}
+              to="/checkout"
+              variant="contained"
+              color="primary"
+              size="large"
+              endIcon={<ShoppingCartCheckoutIcon />}
+            >
+              Proceder al pago
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
+    </Container>
   );
 }
 
 export default CartContainer;
+

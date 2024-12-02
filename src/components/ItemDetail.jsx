@@ -3,7 +3,7 @@ import { useState, useContext } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { cartContext } from "./cartContext.jsx"
-import { ItemCount } from "./itemCount.jsx"
+import { ItemCount } from "./ItemCount.jsx"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

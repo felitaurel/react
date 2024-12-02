@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer>
+    <footer>{/*
       <div class="footer-container">
         <div class="footer-section contact-info">
           <h4>Contact Information</h4>
@@ -33,7 +33,7 @@ function Footer() {
             <button type="submit">Subscribe</button>
           </form>
         </div>
-      </div>
+      </div>*/}
       <div class="footer-bottom">
         <p>&copy; 2024 Your E-commerce Site. All rights reserved.</p>
       </div>

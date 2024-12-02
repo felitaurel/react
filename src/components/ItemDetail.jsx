@@ -4,7 +4,7 @@ import { getProductData } from "./firebase.js";
 import { useParams } from "react-router-dom";
 import { cartContext } from './cartContext.jsx';
 import ItemCount from './ItemCount.jsx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Grid,
   Typography,
@@ -31,7 +31,7 @@ function ItemDetail(props) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const tallesPosibles = [36, 37, 38, 39, 40, 41, 42, 43, 44];
 

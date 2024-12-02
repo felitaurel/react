@@ -1,10 +1,9 @@
-'use client'
 
 import { useState, useContext } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { cartContext } from "./cart-context"
-import { ItemCount } from "./item-count"
+import { cartContext } from "./cart-context.jsx"
+import { ItemCount } from "./item-count.jsx"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

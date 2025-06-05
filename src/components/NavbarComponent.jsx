@@ -18,7 +18,7 @@ import { SvgIcon } from '@mui/material';
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom"
 
-{/*Navbar sacado de Material ui, edite detalles relevantes y separe el cartwidjet*/}
+{/*aishdashjdajhsd TEST Navbar sacado de Material ui, edite detalles relevantes y separe el cartwidjet*/}
 
 const pages = ['urbano', 'running', 'accesorios'];
 
